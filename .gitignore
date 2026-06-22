@@ -1,0 +1,9 @@
+docs
+/docs
+
+.claude
+.venv
+
+COLAB_COMPLETE_GUIDE.md
+COLAB_SETUP_INSTRUCTIONS.md
+IMPLEMENTATION_GUIDE.md
