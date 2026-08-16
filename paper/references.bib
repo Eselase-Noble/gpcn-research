@@ -1,0 +1,91 @@
+% References for GPCN-ViT manuscript.
+% Entries were VERIFIED by an adversarial deep-research pass (3-vote check).
+% DOIs / arXiv IDs / PMIDs are confirmed real. Author lists marked
+% "[verify]" were not confirmed by the source-fetch and should be checked
+% against the paper before submission.
+
+% ---- Dataset -----------------------------------------------------------------
+@article{spanhol2016breakhis,
+  author  = {Spanhol, Fabio A. and Oliveira, Luiz S. and Petitjean, Caroline and Heutte, Laurent},
+  title   = {A Dataset for Breast Cancer Histopathological Image Classification},
+  journal = {IEEE Transactions on Biomedical Engineering},
+  volume  = {63}, number = {7}, pages = {1455--1462}, year = {2016},
+  doi     = {10.1109/TBME.2015.2496264}
+}
+
+% ---- Data leakage / patient-level evaluation (the core problem) --------------
+@inproceedings{bussola2020leakage,
+  author    = {Bussola, Nicole and Marcolini, Alessia and Maggio, Valerio and Jurman, Giuseppe and Furlanello, Cesare},
+  title     = {{AI} Slipping on Tiles: Data Leakage in Digital Pathology},
+  booktitle = {Pattern Recognition. ICPR International Workshops and Challenges},
+  series    = {Lecture Notes in Computer Science},
+  publisher = {Springer},
+  year      = {2021},
+  doi       = {10.1007/978-3-030-68763-2_13},
+  note      = {arXiv:1909.06539}
+}
+
+@article{priyanka2026patientaware,
+  author  = {Priyanka and Narendra, {[verify]} and Rao, {[verify]}},
+  title   = {A Patient-Aware Benchmarking of {CNN} and Transformer Architectures for Breast Cancer Histopathology Classification},
+  journal = {Frontiers in Digital Health},
+  year    = {2026},
+  doi     = {10.3389/fdgth.2026.1752938},
+  note    = {PMID: 42179815}
+}
+
+% ---- High-accuracy image-level / unspecified-split comparators (inflated) -----
+@article{scirep2024vitaspp,
+  author  = {{[verify authors]}},
+  title   = {Global and Multi-Scale Context Fusion with a Vision Transformer for Breast Cancer Histopathology Classification},
+  journal = {Scientific Reports},
+  year    = {2024},
+  doi     = {10.1038/s41598-024-78363-w},
+  note    = {Image-level 80:20 split; reports 99.25--100\% per magnification. Title to verify.}
+}
+
+@article{gella2024vit,
+  author  = {Gella, {[verify]} and others},
+  title   = {High-Performance Fine-Tuned Vision Transformer for Breast Cancer Histopathology Classification},
+  journal = {bioRxiv},
+  year    = {2024},
+  doi     = {10.1101/2024.08.17.608410},
+  note    = {Image-level split; reports 99.99\% accuracy. Preprint.}
+}
+
+@article{dfvit2024,
+  author  = {{[verify authors]}},
+  title   = {{DFViT}: A Deep Fusion Vision Transformer ({VGG16} + {ViT}) for Breast Cancer Histopathology},
+  journal = {Healthcare Technology Letters},
+  year    = {2024},
+  note    = {PMC11665795. Split protocol not specified; reports 95.29\% accuracy.}
+}
+
+@article{lwtmpcnn2026,
+  author  = {{[verify authors]}},
+  title   = {A Lifting Wavelet Transform with Multi-Path {CNN} for Breast Cancer Histopathology Classification},
+  journal = {International Journal of Computational Intelligence Systems},
+  year    = {2026},
+  doi     = {10.1007/s44196-026-01258-3},
+  note    = {Image-level 70:30 split; reports 99.34\% accuracy.}
+}
+
+@article{magindep2024vit,
+  author  = {{[verify authors]}},
+  title   = {A Magnification-Independent Vision Transformer for Breast Cancer Histopathology Classification},
+  journal = {Multimedia Tools and Applications},
+  year    = {2024},
+  doi     = {10.1007/s11042-024-19685-9},
+  note    = {Magnification-independent (not slide-level fusion); 97.72\% overall.}
+}
+
+% ---- Pathology foundation model (our backbone origin) ------------------------
+% NOTE: No verified peer-reviewed BreakHis benchmark numbers exist for Phikon/UNI.
+% Cite only as the origin of the backbone we use, NOT for BreakHis performance.
+@article{filiot2024phikonv2,
+  author  = {Filiot, Alexandre and others},
+  title   = {{Phikon-v2}: A Large and Public Feature Extractor for Biomarker Prediction},
+  journal = {arXiv preprint arXiv:2409.09173},
+  year    = {2024},
+  note    = {Owkin pathology foundation model (iBOT/DINOv2, TCGA). Author list to verify.}
+}

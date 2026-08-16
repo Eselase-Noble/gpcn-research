@@ -41,6 +41,12 @@ class ModelConfig:
     alpha: float = 0.3  # Spatial vs feature weight
     use_checkpoint: bool = True  # Gradient checkpointing for memory
     
+    # Multi-magnification fusion rule (ablation of the attention head).
+    #   'attention' -> cross-mag MHA + learned vote (ours); 'none' -> vote only;
+    #   'mean' -> mean-pool CLS + shared head; 'concat' -> concat CLS + MLP.
+    # build_fusion_model (fusion_baselines.py) reads this to train each arm.
+    fusion_mode: str = 'attention'
+
     # Graph pyramid
     use_multi_scale: bool = True
     pyramid_levels: int = 3
