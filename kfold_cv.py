@@ -96,7 +96,7 @@ def _collect_patient_labels(root_dir: str, mags: List[str]) -> Tuple[List[str], 
                 class_name = parts[breast_idx + 1]
                 if class_name not in ('benign', 'malignant'):
                     continue
-                patient_id = img_path.stem.split('_')[2]
+                patient_id = '-'.join(img_path.stem.split('_')[2].split('-')[:3])
                 patient_to_label[patient_id].append(0 if class_name == 'benign' else 1)
             except (ValueError, IndexError):
                 continue

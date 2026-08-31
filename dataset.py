@@ -69,7 +69,10 @@ class BREAKHISDataset(Dataset):
         parts = filename.split('_')
 
         try:
-            patient_id = parts[2]  # Patient ID is 3rd part
+            # 3rd underscore field. Real BreaKHis uses hyphens for mag/seq
+            # (SOB_B_A-14-22549AB-40-001), so strip them: keep type-year-slideID
+            # only, giving one ID per patient/slide across all mags & sequences.
+            patient_id = '-'.join(parts[2].split('-')[:3])
             return patient_id
         except:
             return filename
@@ -181,7 +184,7 @@ def create_patient_level_split(root_dir: str,
 
                 # Extract patient ID
                 filename = img_path.stem
-                patient_id = filename.split('_')[2]
+                patient_id = '-'.join(filename.split('_')[2].split('-')[:3])
 
                 # Store patient label (use majority vote if patient has mixed labels)
                 label = 0 if class_name == 'benign' else 1
@@ -257,7 +260,7 @@ def create_kfold_splits(root_dir: str,
                     continue
 
                 filename = img_path.stem
-                patient_id = filename.split('_')[2]
+                patient_id = '-'.join(filename.split('_')[2].split('-')[:3])
 
                 label = 0 if class_name == 'benign' else 1
                 if patient_id not in patient_to_label:
