@@ -14,7 +14,7 @@ Quick map:
 - **§3** — the dataset and the single biggest methodological trap in this field (data leakage).
 - **§4** — the full architecture, with equations, bottom-up: GPCN layer → GPCN-ViT block → graph pyramid → multi-magnification fusion.
 - **§5** — training recipe (losses, optimisation, calibration, threshold tuning).
-- **§6** — evaluation metrics, every one defined mathematically.
+- **§6** — evaluation metrics, every one  defined mathematically.
 - **§7** — your results, including the fair single-magnification baseline and the learned magnification weights.
 - **§8** — the 2023–2026 research landscape and exactly where your work sits.
 - **§9** — defense Q&A.
